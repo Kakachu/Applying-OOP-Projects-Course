@@ -1,4 +1,6 @@
-﻿using UtmBuilder.Core.ValueObjects;
+﻿using UtmBuilder.Core.Extensions;
+using UtmBuilder.Core.ValueObjects;
+using UtmBuilder.Core.ValueObjects.Exceptions;
 
 namespace UtmBuilder.Core
 {
@@ -19,5 +21,45 @@ namespace UtmBuilder.Core
         ///  Campaign Details
         /// </summary>
         public Campaign Campaign { get; private set; }
+
+        public static implicit operator string(Utm utm) 
+            => utm.ToString();
+
+        public static implicit operator Utm(string link)
+        {
+            if (string.IsNullOrEmpty(link))
+                throw new InvalidUrlException();
+
+            var url = new Url(link);
+            var segments = url.Address.Split("?");
+            if(segments.Length == 1)
+                throw new InvalidUrlException("No segments were provided");
+
+            var parameters = segments[1].Split("&");
+            var source = parameters.Where(x => x.StartsWith("utm_source")).FirstOrDefault().Split("=")[1];
+            var medium = parameters.Where(x => x.StartsWith("utm_medium")).FirstOrDefault().Split("=")[1];
+            var name = parameters.Where(x => x.StartsWith("utm_campaign")).FirstOrDefault().Split("=")[1];
+            var id = parameters.Where(x => x.StartsWith("utm_id")).FirstOrDefault().Split("=")[1];
+            var term = parameters.Where(x => x.StartsWith("utm_term")).FirstOrDefault().Split("=")[1];
+            var content = parameters.Where(x => x.StartsWith("utm_content")).FirstOrDefault().Split("=")[1];
+
+            var campaign = new Campaign(source, medium, name, id, term, content);
+            var utm = new Utm(url = new Url(segments[0]), campaign);
+            return utm;
+		}
+
+		public override string ToString()
+		{
+            var segments = new List<string>();
+
+            segments.AddIfNotNull("utm_source", Campaign.Source);
+            segments.AddIfNotNull("utm_medium", Campaign.Medium);
+            segments.AddIfNotNull("utm_campaign", Campaign.Name);
+            segments.AddIfNotNull("utm_id", Campaign.Id);
+            segments.AddIfNotNull("utm_term", Campaign.Term);
+            segments.AddIfNotNull("utm_content", Campaign.Content);
+
+			return $"{Url.Address}?{string.Join("&", segments)}";
+		}
 	}
 }
