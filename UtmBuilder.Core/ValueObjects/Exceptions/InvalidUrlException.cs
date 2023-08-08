@@ -2,7 +2,7 @@
 
 namespace UtmBuilder.Core.ValueObjects.Exceptions
 {
-	partial class InvalidUrlException : Exception
+	public partial class InvalidUrlException : Exception
 	{
 		private const string DefaultErrorMessage = "Invalid URL";
 
@@ -15,7 +15,7 @@ namespace UtmBuilder.Core.ValueObjects.Exceptions
 		{
 			if(string.IsNullOrEmpty(address))
 				throw new InvalidUrlException(message);
-			r
+			
 			if (!UrlRegex().IsMatch(address))
 				throw new InvalidUrlException();
 		}

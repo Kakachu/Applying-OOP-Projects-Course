@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "7ReY2aysD/cQttd6UqO0rWewK1a01GUHPhgdlnc/hSMRgKa8GyhmWVeC51gNX0RgB2DIqETnJXEu35MSGTqDPQ==",
+  "dgSpecHash": "p0LvUqecbs3SlHPsQGRP+yQxkKJfvj+ILzd17ZnEMCc8zgqsaSbfvR27O+35RuJrVZ8DHrNUPKKF7/hUydOg8A==",
   "success": true,
   "projectFilePath": "D:\\Dev\\balta.io\\UtmBuilder\\UtmBuilder.Core\\UtmBuilder.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kauaj\\.nuget\\packages\\microsoft.codecoverage\\17.6.3\\microsoft.codecoverage.17.6.3.nupkg.sha512",
+    "C:\\Users\\kauaj\\.nuget\\packages\\microsoft.net.test.sdk\\17.6.3\\microsoft.net.test.sdk.17.6.3.nupkg.sha512",
+    "C:\\Users\\kauaj\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.6.3\\microsoft.testplatform.objectmodel.17.6.3.nupkg.sha512",
+    "C:\\Users\\kauaj\\.nuget\\packages\\microsoft.testplatform.testhost\\17.6.3\\microsoft.testplatform.testhost.17.6.3.nupkg.sha512",
+    "C:\\Users\\kauaj\\.nuget\\packages\\mstest.testadapter\\3.1.1\\mstest.testadapter.3.1.1.nupkg.sha512",
+    "C:\\Users\\kauaj\\.nuget\\packages\\mstest.testframework\\3.1.1\\mstest.testframework.3.1.1.nupkg.sha512",
+    "C:\\Users\\kauaj\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\kauaj\\.nuget\\packages\\nuget.frameworks\\6.5.0\\nuget.frameworks.6.5.0.nupkg.sha512",
+    "C:\\Users\\kauaj\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+  ],
   "logs": []
 }
