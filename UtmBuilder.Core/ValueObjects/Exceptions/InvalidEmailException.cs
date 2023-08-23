@@ -21,7 +21,7 @@ namespace UtmBuilder.Core.ValueObjects.Exceptions
 				throw new InvalidEmailException(message);
 		}
 
-		[GeneratedRegex("/^[a-z0-9.]+@[a-z0-9]+\\.[a-z]+\\.([a-z]+)?$/i")]
+		[GeneratedRegex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")]
 		private static partial Regex EmailRegex();
 	}
 }

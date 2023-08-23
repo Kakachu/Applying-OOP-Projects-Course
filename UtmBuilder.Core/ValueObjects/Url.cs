@@ -8,7 +8,7 @@ namespace UtmBuilder.Core.ValueObjects
 		/// <summary>
 		/// Create a new URL
 		/// </summary>
-		/// <param name="address">Addres of URL (Website link)</param>
+		/// <param name="address">Address of URL (Website link)</param>
 		public Url(string address)
         {
             Address = address;
